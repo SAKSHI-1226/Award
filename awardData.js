@@ -2,7 +2,7 @@ const award = {
 
     title: "SERINGAPATAM TROPHY",
 
-    image: "images/trophy.png",
+    image: "trophy.png",
 
     details: [
 
