@@ -1,105 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Award</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Icons -->
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<title>Digital Award</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <img class="trophy" src="https://images.unsplash.com/photo-1567427018141-0584cfcbf1b8?w=900" alt="Award">
+    <div class="card">
 
-    <h1>Excellence Award 2026</h1>
+        <img id="awardImage">
 
-    <h2>Presented To</h2>
+        <h1 id="title"></h1>
 
-    <h3>Sakshi Rawat</h3>
+        <div id="details"></div>
 
-    <p class="subtitle">
-        Recognizing outstanding dedication, leadership and commitment.
-    </p>
+    </div>
 
-    <div class="buttons">
+    <div class="card">
+
+        <h2>SUMMARY</h2>
+
+        <p id="summary"></p>
 
         <button id="listenBtn">
-            <i class="fa-solid fa-volume-high"></i>
-            Listen
+
+            🔊 Listen Summary
+
         </button>
-
-        <button>
-            <i class="fa-solid fa-circle-play"></i>
-            Watch Story
-        </button>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Award Details</h2>
-
-        <div class="row">
-            <span>Award</span>
-            <span>Excellence Award</span>
-        </div>
-
-        <div class="row">
-            <span>Recipient</span>
-            <span>Sakshi Rawat</span>
-        </div>
-
-        <div class="row">
-            <span>Date</span>
-            <span>17 July 2026</span>
-        </div>
-
-        <div class="row">
-            <span>Presented By</span>
-            <span>ABC Organization</span>
-        </div>
-
-    </div>
-
-    <div class="card">
-
-        <h2>About this Award</h2>
-
-        <p>
-            This award recognizes individuals who have demonstrated exceptional
-            leadership, innovation and dedication.
-        </p>
-
-    </div>
-
-    <div class="card">
-
-        <h2>Gallery</h2>
-
-        <div class="gallery">
-
-            <img src="https://picsum.photos/300?1">
-
-            <img src="https://picsum.photos/300?2">
-
-            <img src="https://picsum.photos/300?3">
-
-        </div>
 
     </div>
 
 </div>
 
+<script src="awardData.js"></script>
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
