@@ -1,33 +1,133 @@
-document.getElementById("title").innerHTML = award.title;
+// ================================
+// LOAD DATA
+// ================================
 
-document.getElementById("awardImage").src = award.image;
+document.addEventListener("DOMContentLoaded", () => {
 
-document.getElementById("summary").innerHTML = award.summary;
+    // Page Title
+    document.getElementById("title").textContent = award.title;
 
-const details=document.getElementById("details");
+    // Trophy Image
+    document.getElementById("awardImage").src = award.image;
 
-award.details.forEach(item=>{
+    // Website (optional)
+    if (award.website) {
+        document.getElementById("website").textContent = award.website;
+    }
 
-details.innerHTML += `
-<div class="detail">
+    // Summary
+    document.getElementById("summary").textContent = award.summary;
 
-<div class="label">${item.label}</div>
-
-<div>${item.value}</div>
-
-</div>
-`;
+    // Award Details
+    loadDetails();
 
 });
 
-document.getElementById("listenBtn").onclick=function(){
 
-const speech=new SpeechSynthesisUtterance(award.summary);
+// ================================
+// CREATE DETAILS TABLE
+// ================================
 
-speech.rate=1;
+function loadDetails() {
 
-speech.pitch=1;
+    const detailsContainer = document.getElementById("details");
 
-window.speechSynthesis.speak(speech);
+    detailsContainer.innerHTML = "";
+
+    award.details.forEach(detail => {
+
+        const row = document.createElement("div");
+        row.className = "detail-row";
+
+        row.innerHTML = `
+
+            <div class="detail-label">
+                ${detail.label}
+            </div>
+
+            <div class="detail-value">
+                ${detail.value}
+            </div>
+
+        `;
+
+        detailsContainer.appendChild(row);
+
+    });
 
 }
+
+
+// ================================
+// TEXT TO SPEECH
+// ================================
+
+const button = document.getElementById("listenBtn");
+
+let speaking = false;
+
+button.addEventListener("click", () => {
+
+    // Stop if already speaking
+    if (speechSynthesis.speaking) {
+
+        speechSynthesis.cancel();
+
+        speaking = false;
+
+        button.innerHTML =
+            `<i class="fa-solid fa-volume-high"></i> Listen Summary`;
+
+        return;
+
+    }
+
+    const speech = new SpeechSynthesisUtterance();
+
+    speech.text = award.summary;
+
+    speech.lang = "en-IN";
+
+    speech.rate = 0.9;
+
+    speech.pitch = 1;
+
+    speech.volume = 1;
+
+    speaking = true;
+
+    button.innerHTML =
+        `<i class="fa-solid fa-stop"></i> Stop`;
+
+    speech.onend = () => {
+
+        speaking = false;
+
+        button.innerHTML =
+            `<i class="fa-solid fa-volume-high"></i> Listen Summary`;
+
+    };
+
+    speech.onerror = () => {
+
+        speaking = false;
+
+        button.innerHTML =
+            `<i class="fa-solid fa-volume-high"></i> Listen Summary`;
+
+    };
+
+    speechSynthesis.speak(speech);
+
+});
+
+
+// ================================
+// STOP SPEECH WHEN USER LEAVES PAGE
+// ================================
+
+window.addEventListener("beforeunload", () => {
+
+    speechSynthesis.cancel();
+
+});
