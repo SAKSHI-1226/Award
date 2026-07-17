@@ -4,6 +4,8 @@ const award = {
 
     image: "trophy.png",
 
+    website: "sakshi-1226.github.io",
+
     details: [
 
         {
@@ -42,9 +44,16 @@ const award = {
         }
 
     ],
+     summary: `The trophy was instituted to commemorate the victory of the British over Tipu Sultan on 04 Nov 1799.
 
-    summary:
+The trophy is made of sterling silver and depicts a Lion (the British) subduing the Tiger (Tipu Sultan).
 
-"The medal commemorates the British victory over Tipu Sultan during the Siege of Seringapatam. It represents one of the most significant victories in British India."
+The word "Seringapatam" is inscribed on the front side of the trophy and the date "IV May MDCCC" on the rear side.
 
-}
+On the sides it bears the two faces of the medal depicting the Lion subduing the Tiger.
+
+On one side of the medal is the depiction of the storming of the Seringapatam Fort from an actual drawing made on the spot. On the other side is the meridian sun denoting the time of the assault, with a Persian inscription underneath.`
+
+};
+
+   
