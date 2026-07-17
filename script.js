@@ -1,16 +1,32 @@
-const button=document.getElementById("listenBtn");
+document.getElementById("title").innerHTML = award.title;
 
-button.onclick=function(){
+document.getElementById("awardImage").src = award.image;
 
-const speech=new SpeechSynthesisUtterance(
+document.getElementById("summary").innerHTML = award.summary;
 
-"Welcome. You are viewing the Excellence Award 2026. This award is proudly presented to Sakshi Rawat in recognition of outstanding leadership and dedication."
+const details=document.getElementById("details");
 
-);
+award.details.forEach(item=>{
+
+details.innerHTML += `
+<div class="detail">
+
+<div class="label">${item.label}</div>
+
+<div>${item.value}</div>
+
+</div>
+`;
+
+});
+
+document.getElementById("listenBtn").onclick=function(){
+
+const speech=new SpeechSynthesisUtterance(award.summary);
 
 speech.rate=1;
+
 speech.pitch=1;
-speech.volume=1;
 
 window.speechSynthesis.speak(speech);
 
