@@ -1,3 +1,7 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
 *{
     margin:0;
     padding:0;
@@ -6,49 +10,133 @@
 
 body{
 
+    background:#e8d8b8;
+
     font-family:'Poppins',sans-serif;
 
-    background:#e8dcc0;
+    color:#3f2b16;
 
-    padding:30px;
+    padding:25px;
 
 }
 
 .container{
 
-    max-width:650px;
+    max-width:700px;
 
     margin:auto;
 
 }
 
+
+/* ===========================
+   CARDS
+=========================== */
+
 .card{
 
-    background:#f5ebcf;
+    position:relative;
 
-    border:2px solid #a87d3d;
+    background:#f6edd5;
 
-    border-radius:10px;
+    border:2px solid #b18845;
 
-    padding:30px;
+    border-radius:12px;
 
-    margin-bottom:25px;
+    padding:35px;
+
+    margin-bottom:30px;
 
 }
 
-#awardImage{
 
-    display:block;
+/* ===========================
+   DECORATIVE CORNERS
+=========================== */
+
+.corner{
+
+    width:18px;
+
+    height:18px;
+
+    border-color:#b18845;
+
+    position:absolute;
+
+}
+
+.top-left{
+
+    top:12px;
+
+    left:12px;
+
+    border-top:2px solid;
+
+    border-left:2px solid;
+
+}
+
+.top-right{
+
+    top:12px;
+
+    right:12px;
+
+    border-top:2px solid;
+
+    border-right:2px solid;
+
+}
+
+.bottom-left{
+
+    bottom:12px;
+
+    left:12px;
+
+    border-bottom:2px solid;
+
+    border-left:2px solid;
+
+}
+
+.bottom-right{
+
+    bottom:12px;
+
+    right:12px;
+
+    border-bottom:2px solid;
+
+    border-right:2px solid;
+
+}
+
+
+/* ===========================
+   TROPHY IMAGE
+=========================== */
+
+#awardImage{
 
     width:220px;
 
-    height:auto;
+    display:block;
 
-    margin:0 auto 25px;
+    margin:auto;
+
+    margin-bottom:25px;
 
     object-fit:contain;
 
 }
+
+
+/* ===========================
+   TITLE
+=========================== */
 
 h1{
 
@@ -56,63 +144,137 @@ h1{
 
     text-align:center;
 
-    color:#5d3915;
+    font-size:34px;
 
-    font-size:46px;
-
-    margin-bottom:30px;
+    color:#5c3a12;
 
     letter-spacing:2px;
 
+    margin-bottom:18px;
+
 }
 
-.detail{
+
+/* ===========================
+   DIVIDER
+=========================== */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+}
+
+.divider span{
+
+    width:120px;
+
+    height:1px;
+
+    background:#b18845;
+
+}
+
+.divider i{
+
+    color:#b18845;
+
+    font-size:12px;
+
+}
+
+.small-divider span{
+
+    width:70px;
+
+}
+
+
+/* ===========================
+   DETAILS TABLE
+=========================== */
+
+.details-table{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.detail-row{
 
     display:grid;
 
     grid-template-columns:210px 1fr;
 
-    margin:18px 0;
+    gap:18px;
 
     align-items:flex-start;
 
-    font-size:19px;
-
-    line-height:32px;
-
 }
 
-.label{
+.detail-label{
 
     font-weight:600;
 
-    color:#5b3b18;
+    color:#5b3a13;
 
 }
 
-h2{
+.detail-value{
+
+    color:#444;
+
+    line-height:28px;
+
+}
+
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.summary-card h2{
+
+    text-align:center;
 
     font-family:'Cinzel',serif;
 
-    color:#5d3915;
-
     font-size:30px;
 
-    margin-bottom:20px;
+    color:#5b3a13;
+
+    margin-bottom:15px;
 
 }
 
 #summary{
 
-    font-size:18px;
+    font-size:17px;
 
     line-height:30px;
 
     text-align:justify;
 
-    color:#333;
+    margin-top:15px;
 
 }
+
+
+/* ===========================
+   BUTTON
+=========================== */
 
 button{
 
@@ -120,19 +282,19 @@ button{
 
     margin-top:30px;
 
-    padding:18px;
-
-    background:#575757;
+    background:#555;
 
     color:white;
 
     border:none;
 
+    padding:18px;
+
     border-radius:8px;
 
     cursor:pointer;
 
-    font-size:18px;
+    font-size:17px;
 
     font-weight:600;
 
@@ -142,6 +304,102 @@ button{
 
 button:hover{
 
-    background:#2f2f2f;
+    background:#2d2d2d;
+
+}
+
+button i{
+
+    margin-right:8px;
+
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
+}
+
+.footer-chip{
+
+    background:#f6edd5;
+
+    border:1px solid #b18845;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    color:#5b3a13;
+
+    font-size:15px;
+
+}
+
+.footer-chip i{
+
+    margin-right:8px;
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:650px){
+
+.detail-row{
+
+    grid-template-columns:1fr;
+
+    gap:6px;
+
+}
+
+.detail-label{
+
+    font-size:15px;
+
+}
+
+.detail-value{
+
+    font-size:15px;
+
+}
+
+h1{
+
+    font-size:28px;
+
+}
+
+#awardImage{
+
+    width:170px;
+
+}
+
+.card{
+
+    padding:25px;
+
+}
+
+.divider span{
+
+    width:70px;
+
+}
 
 }
