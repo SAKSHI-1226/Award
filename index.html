@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Digital Award</title>
+    <title>Digital Award</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
@@ -19,33 +33,108 @@
 
 <div class="container">
 
-    <div class="card">
+    <!-- ========================= -->
+    <!-- TOP CARD                  -->
+    <!-- ========================= -->
 
-        <img id="awardImage">
+    <section class="card museum-card">
+
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <img id="awardImage"
+             alt="Award">
 
         <h1 id="title"></h1>
 
-        <div id="details"></div>
+        <div class="divider">
 
-    </div>
+            <span></span>
 
-    <div class="card">
+            <i class="fa-solid fa-diamond"></i>
 
-        <h2>SUMMARY</h2>
+            <span></span>
 
-        <p id="summary"></p>
+        </div>
+
+        <div id="details"
+             class="details-table">
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- SUMMARY CARD              -->
+    <!-- ========================= -->
+
+    <section class="card summary-card">
+
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <h2>
+
+            SUMMARY
+
+        </h2>
+
+        <div class="divider small-divider">
+
+            <span></span>
+
+            <i class="fa-solid fa-diamond"></i>
+
+            <span></span>
+
+        </div>
+
+        <p id="summary">
+
+        </p>
 
         <button id="listenBtn">
 
-            🔊 Listen Summary
+            <i class="fa-solid fa-volume-high"></i>
+
+            Listen Summary
 
         </button>
 
-    </div>
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-chip">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <span id="website">
+
+                sakshi-1226.github.io
+
+            </span>
+
+        </div>
+
+    </footer>
 
 </div>
 
+
+<!-- DATA -->
+
 <script src="awardData.js"></script>
+
+<!-- PAGE LOGIC -->
 
 <script src="script.js"></script>
 
